@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../JS/jquery.min.js" ></script>
+    <script src="../../layui/layui.js"></script>
+    <script src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <style>
+        body{
+            padding-top: 60px;
+            padding-bottom: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getRoles() {
+            $.ajax({
+                type:"post",
+                url:"/getRoles",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200){
+                        window.location.href = "modify_score.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+        function logout() {
+            $.ajax({
+                type: "post",
+                url: "/logout",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200) {
+                        window.location.href = "../../index.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div style="height: 100%;width: 100%;">
+        <div style="height: 70%;width: 100%;">
+            <h2 style="color: #0066FF;float: left">XCK程序栈</h2>
+            <p style="color: #080808;float: right"><a href="#" onclick="logout()" style="color: #080808">退出</a></p>
+        </div>
+        <div style="height: 30%;width: 100%;">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息维护<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="info.html" id="sel">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">发布成绩<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="release_score.html">发布学生成绩</a></li>
+                        <li><a href="#" onclick="getRoles()">更改学生成绩</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<table id="demo" lay-filter="test"></table>
+
+<script>
+    layui.use('table', function() {
+        var table = layui.table,
+            form = layui.form;
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            , height: 420
+            , even: true
+            , url: '/sel_info' //数据接口
+            , page: true //开启分页
+            , limit: 10
+            ,id:'tests'
+            , cols: [[ //表头{type:'checkbox'}
+                {field: 'id', title: '账号', width: 100, sort: true}
+                , {field: 'name', title: '名字', width: 80,sort: true}
+                , {field: 'gender', title: '性别', width: 60,sort: true}
+                , {field: 'birthday', title: '出生日期', width: 120,sort: true}
+                , {field: 'nationality', title: '民族', width: 60,sort: true}
+                , {field: 'iD_card', title: '身份证', width: 120, sort: true}
+                ,{field: 'political_status',title: '政治外貌',width: 100, sort: true}
+                ,{field: 'address',title: '家庭住址',width: 120, sort: true}
+                ,{field: 'phone',title: '联系电话',width: 100, sort: true}
+                ,{field: 'department',title: '所属院系',width: 160, sort: true}
+                ,{field: 'major_name',title: '专业名',width: 160, sort: true}
+                ,{field: 'administrative_class',title: '授课班级',width: 200, sort: true}
+            ]]
+        });
+
+
+
+    });
+</script>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div style="text-align: center">
+        <p style="color: #080808;size: 12px">2020-2030 @版权所有 xck栈  联系我们：23332333</p>
+    </div>
+</nav>
+
+</body>
+</html>

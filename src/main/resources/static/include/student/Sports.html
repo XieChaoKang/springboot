@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体育选修课</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../JS/jquery.min.js" ></script>
+    <script src="../../layui/layui.js"></script>
+    <script src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function getRoles() {
+            $.ajax({
+                type:"post",
+                url:"/getRoles",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200){
+                        window.location.href = "Info_FeedBack.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+        function logout() {
+            $.ajax({
+                type: "post",
+                url: "/logout",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200) {
+                        window.location.href = "../../index.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+    </script>
+    <style>
+        body{
+            padding-top: 60px;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div style="height: 100%;width: 100%;">
+        <div style="height: 70%;width: 100%;">
+            <h2 style="color: #0066FF;float: left">XCK程序栈</h2>
+            <p style="color: #080808;float: right"> <a href="#" onclick="logout()" style="color: #080808">退出</a></p>
+        </div>
+        <div style="height: 30%;width: 100%;">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">网上选课<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../include/student/Extracurricular.html">课外选修课</a></li>
+                        <li><a href="../../include/student/Sports.html">体育选修课</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息维护<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../include/student/info.html" id="sel">个人信息</a></li>
+                        <li><a href="../../include/student/Change_Pass.html">密码修改</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息查询<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="course.html">课表查询</a></li>
+                        <li><a href="../../include/student/test.html">考试查询</a></li>
+                        <li><a href="../../include/student/score1.html">成绩查询</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息反馈<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="getRoles()">信息反馈</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script type="text/html" id="t">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-sm" lay-event="sel">提交</button>
+        </div>
+    </div>
+</script>
+<table id="demo1" lay-filter="test"></table>
+
+<script>
+    layui.use('table', function() {
+        var table = layui.table,
+            form = layui.form;
+        //第一个实例
+        table.render({
+            elem: '#demo1'
+            ,toolbar: '#t'
+            , height: 420
+            , even: true
+            , url: '/sel_course1' //数据接口
+            , page: true //开启分页
+            , limit: 10
+            ,id:'tests'
+            , cols: [[ {checkbox:true},
+                {field:'course_code', title: '课程代码', width: 120,sort: true}
+                , {field: 'course_name', title: '课程名', width: 200,sort: true}
+                ,{field: 'course_teacher', title: '上课老师', width: 100,sort: true}
+                ,{field: 'course_capacity', title: '课程容量', width: 80,sort: true}
+                , {field: 'course_location', title: '上课地点', width: 100,sort: true}
+                , {field: 'course_time', title: '上课时间', width: 100, sort: true}
+                , {field: 'credit', title: '学分', width: 100, sort: true}
+                , {field: 'course_nature', title: '课程性质', width: 100, sort: true}
+            ]]
+        });
+
+        table.on('toolbar(test)',function (obj) {
+            switch (obj.event){
+                case 'sel':
+                    var checkStatus = table.checkStatus('tests');
+                    var data = checkStatus.data;
+                    if (data.length < 1){
+                        layer.msg("至少得选择一个再提交吧老哥！！",{icon:2});
+                        return ;
+                    }
+                    if (data.length > 3){
+                        layer.msg("选那么多干嘛？刷的完嘛老哥？最多可选两门课！！",{icon:2});
+                        return ;
+                    }
+                    var course_codes = "";
+                    if (data.length > 0){
+                        for(var i = 0;i<data.length;i++){
+                            course_codes += data[i].course_code+",";
+                        }
+                    }
+                    layer.confirm('确认提交吗？'+course_codes,function (index) {
+                        $.ajax({
+                            type:"post",
+                            url:"/in_course",
+                            data:{course_codes:course_codes},
+                            success:function (data) {
+                                if (data.code == 233){
+                                    layer.msg(data.message);
+                                    location.reload();
+                                }
+                            }
+                        });
+                    });
+                    break;
+            }
+        });
+
+    });
+</script>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div style="text-align: center">
+        <p style="color: #080808;size: 12px">2020-2030 @版权所有 xck栈  联系我们：23332333</p>
+    </div>
+</nav>
+
+</body>
+</html>

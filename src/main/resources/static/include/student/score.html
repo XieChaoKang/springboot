@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <script src="../../JS/jquery.min.js" ></script>
+    <script src="../../layui/layui.js"></script>
+</head>
+<body>
+<table id="demo1" lay-filter="test"></table>
+
+<script>
+    layui.use('table', function() {
+        var table = layui.table,
+            form = layui.form;
+        //第一个实例
+        table.render({
+            elem: '#demo1'
+            , height: 400
+            , even: true
+            , url: '/sel_score' //数据接口
+            , page: true //开启分页
+            , limit: 10
+            ,id:'tests'
+            , cols: [[ //表头{type:'checkbox'}
+                 {field: 'course_code', title: '课程代码', width: 120,sort: true}
+                , {field: 'course_name', title: '课程名', width: 200,sort: true}
+                , {field: 'credit', title: '学分', width: 100,sort: true}
+                , {field: 'score', title: '成绩', width: 100, sort: true}
+            ]]
+        });
+    });
+</script>
+
+</body>
+</html>

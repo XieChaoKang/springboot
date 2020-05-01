@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布学生成绩</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../JS/jquery.min.js" ></script>
+    <script src="../../layui/layui.js"></script>
+    <script src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <style>
+        body{
+            padding-top: 60px;
+            padding-bottom: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getRoles() {
+            $.ajax({
+                type:"post",
+                url:"/getRoles",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200){
+                        window.location.href = "modify_score.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+        function logout() {
+            $.ajax({
+                type: "post",
+                url: "/logout",
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200) {
+                        window.location.href = "../../index.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div style="height: 100%;width: 100%;">
+        <div style="height: 70%;width: 100%;">
+            <h2 style="color: #0066FF;float: left">XCK程序栈</h2>
+            <p style="color: #080808;float: right"><a href="#" onclick="logout()" style="color: #080808">退出</a></p>
+        </div>
+        <div style="height: 30%;width: 100%;">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息维护<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="info.html" id="sel">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">发布成绩<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="release_score.html">发布学生成绩</a></li>
+                        <li><a href="#" onclick="getRoles()">更改学生成绩</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<table id="demo" lay-filter="test"></table>
+<!--按钮-->
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="update">添加成绩</button>
+    </div>
+</script>
+
+<script>
+    layui.use('table', function() {
+        var table = layui.table,
+            form = layui.form;
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            , height: 400
+            , even: true
+            , url: '/getStu_Score' //数据接口
+            , page: true //开启分页
+            , limit: 10
+            ,id:'tests'
+            , cols: [[ //表头{type:'checkbox'}
+                {field: 'course_code', title: '课程代码', width: 120,sort: true}
+                , {field: 'course_name', title: '课程名', width: 200,sort: true}
+                , {field: 'stu_id', title: '学生学号', width: 140,sort: true}
+                , {field: 'stu_name', title: '学生姓名', width: 120,sort: true}
+                /*, {field: 'score', title: '成绩', width: 80, sort: true}*/
+                ,{field:'right',height:80, width:180, title: '操作', toolbar:'#toolbarDemo'}
+            ]]
+        });
+
+        //监听行内按钮点击事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;//得到当前行数据
+            console.log(data);
+            layer.msg(data.name);
+            switch(obj.event){
+                case 'update':
+                    json = JSON.stringify(data);
+                    layui.use('layer', function () {
+                        //layer.msg(json);
+                        layer.open({
+                            title: '发布学生成绩',
+                            maxmin: true,
+                            type: 2,
+                            content: 'add_score.html',
+                            area: ['500px', '400px']
+                        });
+                    });
+                    break;
+            }
+
+        });
+
+    });
+</script>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div style="text-align: center">
+        <p style="color: #080808;size: 12px">2020-2030 @版权所有 xck栈  联系我们：23332333</p>
+    </div>
+</nav>
+
+</body>
+</html>
