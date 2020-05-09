@@ -148,8 +148,8 @@
                             data:{course_codes:course_codes},
                             success:function (data) {
                                 if (data.code == 233){
-                                    layer.msg(data.message);
                                     location.reload();
+                                    layer.msg(data.message);
                                 }
                             }
                         });

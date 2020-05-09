@@ -1,111 +1,243 @@
-2020-05-01 11:15:46.400  WARN 3064 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+2020-05-09 10:20:36.755  INFO 10516 --- [main] com.xck.demo.DemoApplication             : Starting DemoApplication on DESKTOP-TQD3GT2 with PID 10516 (E:\demo\target\classes started by 谢朝康 in E:\demo)
+2020-05-09 10:20:36.766  INFO 10516 --- [main] com.xck.demo.DemoApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 10:20:39.293  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ac14ec51] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.785  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.812  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.819  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$74d70065] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.822  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$7a04f7f6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.969  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:39.987  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.004  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.086  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.094  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.143  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.145  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.149  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.166  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.167  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.170  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.173  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.174  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.180  INFO 10516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:20:40.540  INFO 10516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 10:20:40.566  INFO 10516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 10:20:40.566  INFO 10516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-05-09 10:20:40.761  INFO 10516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 10:20:40.762  INFO 10516 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3905 ms
+2020-05-09 10:20:41.314  INFO 10516 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 10:20:41.384  INFO 10516 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 10:20:41.606  INFO 10516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-09 10:20:41.611  INFO 10516 --- [main] com.xck.demo.DemoApplication             : Started DemoApplication in 5.619 seconds (JVM running for 10.665)
+2020-05-09 10:21:05.942  INFO 10516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 10:21:05.943  INFO 10516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 10:21:05.950  INFO 10516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-05-09 10:21:18.190  INFO 10516 --- [http-nio-8080-exec-10] c.x.d.Controller.Info_mainHandler.Login  : 方法到达！！
+2020-05-09 10:21:19.509  INFO 10516 --- [http-nio-8080-exec-1] c.x.d.Controller.Info_mainHandler.Login  : 方法到达！！
+2020-05-09 10:21:21.856  INFO 10516 --- [http-nio-8080-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 10:26:47.531  INFO 6572 --- [main] com.xck.demo.DemoApplication             : Starting DemoApplication on DESKTOP-TQD3GT2 with PID 6572 (E:\demo\target\classes started by 谢朝康 in E:\demo)
+2020-05-09 10:26:47.537  INFO 6572 --- [main] com.xck.demo.DemoApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 10:26:49.193  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$1c95f8ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.723  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.750  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.758  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e5580cde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.761  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$ea86046f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.872  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.890  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.896  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.988  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:49.994  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.033  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.035  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.039  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.054  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.055  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.058  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.060  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.060  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.066  INFO 6572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:26:50.574  INFO 6572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 10:26:50.642  INFO 6572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 10:26:50.642  INFO 6572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-05-09 10:26:50.858  INFO 6572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 10:26:50.858  INFO 6572 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3226 ms
+2020-05-09 10:26:51.482  INFO 6572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 10:26:51.579  INFO 6572 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 10:26:51.798  INFO 6572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-09 10:26:51.802  INFO 6572 --- [main] com.xck.demo.DemoApplication             : Started DemoApplication in 5.428 seconds (JVM running for 6.946)
+2020-05-09 10:27:02.057  INFO 6572 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 10:27:02.058  INFO 6572 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 10:27:02.068  INFO 6572 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-09 10:27:23.952  INFO 6572 --- [http-nio-8080-exec-7] c.x.d.Controller.Info_mainHandler.Login  : 方法到达！！
+2020-05-09 10:27:27.591  INFO 6572 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 10:27:36.738  INFO 6572 --- [http-nio-8080-exec-5] com.xck.demo.Util.Sel_CourseResult       : 容量：0
+2020-05-09 10:27:54.383  INFO 6572 --- [http-nio-8080-exec-10] com.xck.demo.Util.Sel_CourseResult       : 容量：1
+2020-05-09 10:28:05.669  INFO 6572 --- [http-nio-8080-exec-3] c.x.d.C.Sel_CourseHandler.Insert_Course  : 访问到达
+2020-05-09 10:28:05.858 ERROR 6572 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'ssm.Elective_courses' doesn't exist
+### The error may exist in com/xck/demo/Mapper/Select_CourseMapper.java (best guess)
+### The error may involve com.xck.demo.Mapper.Select_CourseMapper.getCourse_capacity-Inline
+### The error occurred while setting parameters
+### SQL: select Course_capacity from Elective_courses where Course_code = ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'ssm.Elective_courses' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'ssm.Elective_courses' doesn't exist] with root cause
 
-Found multiple occurrences of org.json.JSONObject on the class path:
+java.sql.SQLSyntaxErrorException: Table 'ssm.Elective_courses' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:970) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:387) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3051) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:619) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.8.jar:1.1.8]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498) ~[druid-1.1.8.jar:1.1.8]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy56.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy74.getCourse_capacity(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at com.sun.proxy.$Proxy75.getCourse_capacity(Unknown Source) ~[na:na]
+	at com.xck.demo.Service.Sel_CourseService.Sel_CourseServiceImpl.Get_CapacityServiceImpl.getCourse_capacity(Get_CapacityServiceImpl.java:25) ~[classes/:na]
+	at com.xck.demo.Controller.Sel_CourseHandler.Insert_Course.test(Insert_Course.java:48) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) ~[druid-1.1.8.jar:1.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.13.RELEASE.jar:5.1.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
 
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
-
-You may wish to exclude one of them to ensure predictable runtime behavior
-
-2020-05-01 11:15:46.432  INFO 3064 --- [main] com.xck.demo.DemoApplicationTests        : Starting DemoApplicationTests on DESKTOP-TQD3GT2 with PID 3064 (started by л���� in E:\demo)
-2020-05-01 11:15:46.447  INFO 3064 --- [main] com.xck.demo.DemoApplicationTests        : No active profile set, falling back to default profiles: default
-2020-05-01 11:15:49.209  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$396efb15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:49.981  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.028  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.075  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$2310f29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.090  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$75f06ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.497  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.528  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.528  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.762  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.793  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.856  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.856  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.872  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.903  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.918  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.918  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.918  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.918  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:50.950  INFO 3064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:15:52.655  INFO 3064 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-01 11:15:52.964  INFO 3064 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2020-05-01 11:15:53.674  INFO 3064 --- [main] com.xck.demo.DemoApplicationTests        : Started DemoApplicationTests in 8.103 seconds (JVM running for 9.917)
-2020-05-01 11:15:54.080  INFO 3064 --- [main] com.xck.demo.DemoApplicationTests        : info
-2020-05-01 11:15:54.080  WARN 3064 --- [main] com.xck.demo.DemoApplicationTests        : warn
-2020-05-01 11:15:54.096 ERROR 3064 --- [main] com.xck.demo.DemoApplicationTests        : error
-2020-05-01 11:15:54.174  INFO 3064 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-01 11:16:50.927  WARN 14672 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
-
-Found multiple occurrences of org.json.JSONObject on the class path:
-
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
-
-You may wish to exclude one of them to ensure predictable runtime behavior
-
-2020-05-01 11:16:50.974  INFO 14672 --- [main] com.xck.demo.DemoApplicationTests        : Starting DemoApplicationTests on DESKTOP-TQD3GT2 with PID 14672 (started by л���� in E:\demo)
-2020-05-01 11:16:50.974  INFO 14672 --- [main] com.xck.demo.DemoApplicationTests        : No active profile set, falling back to default profiles: default
-2020-05-01 11:16:53.774  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$f8954d13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.407  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.501  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.516  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c1576127] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.532  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$c68558b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.799  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.830  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:54.846  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.111  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.127  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.189  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.189  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.205  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.220  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.220  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.236  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.252  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.252  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:55.267  INFO 14672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:16:57.232  INFO 14672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-01 11:16:57.473  INFO 14672 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2020-05-01 11:16:58.541  INFO 14672 --- [main] com.xck.demo.DemoApplicationTests        : Started DemoApplicationTests in 8.333 seconds (JVM running for 10.975)
-2020-05-01 11:16:59.010  INFO 14672 --- [main] com.xck.demo.DemoApplicationTests        : info
-2020-05-01 11:16:59.010  WARN 14672 --- [main] com.xck.demo.DemoApplicationTests        : warn
-2020-05-01 11:16:59.010 ERROR 14672 --- [main] com.xck.demo.DemoApplicationTests        : error
-2020-05-01 11:16:59.166  INFO 14672 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-01 11:17:53.735  WARN 13044 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
-
-Found multiple occurrences of org.json.JSONObject on the class path:
-
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
-	jar:file:/C:/Users/%E8%B0%A2%E6%9C%9D%E5%BA%B7/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
-
-You may wish to exclude one of them to ensure predictable runtime behavior
-
-2020-05-01 11:17:53.750  INFO 13044 --- [main] com.xck.demo.DemoApplicationTests        : Starting DemoApplicationTests on DESKTOP-TQD3GT2 with PID 13044 (started by л���� in E:\demo)
-2020-05-01 11:17:53.766  INFO 13044 --- [main] com.xck.demo.DemoApplicationTests        : No active profile set, falling back to default profiles: default
-2020-05-01 11:17:56.319  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$26edff8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.104  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.167  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.182  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$efb0139e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.182  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$f4de0b2f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.436  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.467  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.494  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.718  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.733  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.780  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.780  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.780  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.817  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.819  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.823  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.824  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.824  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:57.855  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-05-01 11:17:58.948  INFO 13044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-01 11:17:59.164  INFO 13044 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2020-05-01 11:17:59.790  INFO 13044 --- [main] com.xck.demo.DemoApplicationTests        : Started DemoApplicationTests in 6.687 seconds (JVM running for 8.122)
-2020-05-01 11:18:00.295  INFO 13044 --- [main] com.xck.demo.DemoApplicationTests        : info
-2020-05-01 11:18:00.295  WARN 13044 --- [main] com.xck.demo.DemoApplicationTests        : warn
-2020-05-01 11:18:00.295 ERROR 13044 --- [main] com.xck.demo.DemoApplicationTests        : error
-2020-05-01 11:18:00.373  INFO 13044 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 10:29:19.268  INFO 4728 --- [main] com.xck.demo.DemoApplication             : Starting DemoApplication on DESKTOP-TQD3GT2 with PID 4728 (E:\demo\target\classes started by 谢朝康 in E:\demo)
+2020-05-09 10:29:19.273  INFO 4728 --- [main] com.xck.demo.DemoApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 10:29:20.948  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.xck.demo.Config.ShiroConfig$$EnhancerBySpringCGLIB$$cf7d36ad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.422  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.465  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.477  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$983f4ac1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.481  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myDruidConfig' of type [com.xck.demo.Config.MyDruidConfig$$EnhancerBySpringCGLIB$$9d6d4252] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.605  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.619  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.623  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.711  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.726  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.754  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.755  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_mainMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.759  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'stu_getPasswordImpl' of type [com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.771  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.772  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'info_ServiceMapper' of type [com.sun.proxy.$Proxy66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.775  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getRolesServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.778  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getPermissionServiceImpl' of type [com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.779  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.xck.demo.Shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:21.783  INFO 4728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-09 10:29:22.076  INFO 4728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 10:29:22.102  INFO 4728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 10:29:22.102  INFO 4728 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-05-09 10:29:22.247  INFO 4728 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 10:29:22.247  INFO 4728 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2813 ms
+2020-05-09 10:29:22.738  INFO 4728 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 10:29:22.804  INFO 4728 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 10:29:23.021  INFO 4728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-09 10:29:23.024  INFO 4728 --- [main] com.xck.demo.DemoApplication             : Started DemoApplication in 4.552 seconds (JVM running for 5.936)
+2020-05-09 10:29:39.102  INFO 4728 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 10:29:39.102  INFO 4728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 10:29:39.112  INFO 4728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-09 10:29:49.418  INFO 4728 --- [http-nio-8080-exec-7] c.x.d.Controller.Info_mainHandler.Login  : 方法到达！！
+2020-05-09 10:29:52.988  INFO 4728 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 10:29:59.633  INFO 4728 --- [http-nio-8080-exec-7] com.xck.demo.Util.Sel_CourseResult       : 容量：1
+2020-05-09 10:30:02.944  INFO 4728 --- [http-nio-8080-exec-2] c.x.d.C.Sel_CourseHandler.Insert_Course  : 访问到达
+2020-05-09 10:30:03.266  INFO 4728 --- [http-nio-8080-exec-2] c.x.d.C.Sel_CourseHandler.Insert_Course  : 更新：1
+2020-05-09 10:31:09.223  INFO 4728 --- [http-nio-8080-exec-6] com.xck.demo.Util.Sel_CourseResult       : 容量：50
+2020-05-09 10:31:15.246  INFO 4728 --- [http-nio-8080-exec-2] c.x.d.C.Info_mainHandler.Sel_Info        : 1708010138

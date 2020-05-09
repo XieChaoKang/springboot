@@ -1,8 +1,11 @@
 package com.xck.demo.Controller.Sel_CourseHandler;
 
+import com.xck.demo.Model.Elective_courses;
 import com.xck.demo.Model.Stu_course;
 import com.xck.demo.Model.user_info;
+import com.xck.demo.Service.Sel_CourseService.Sel_CourseServiceImpl.Get_CapacityServiceImpl;
 import com.xck.demo.Service.Sel_CourseService.Sel_CourseServiceImpl.In_CourseServiceImpl;
+import com.xck.demo.Service.Sel_CourseService.Sel_CourseServiceImpl.Up_CapacityServiceImpl;
 import com.xck.demo.Util.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,19 +31,33 @@ public class Insert_Course {
     @Autowired
     In_CourseServiceImpl in_courseService;
 
+    @Autowired
+    Get_CapacityServiceImpl get_capacityService;
+
+    @Autowired
+    Up_CapacityServiceImpl upCapacityService;
+
     @RequestMapping("/in_course")
     public Result test(@RequestParam("course_codes") String course_codes, HttpServletRequest request) {
         logger.info("访问到达");
         user_info user_info = (user_info) request.getSession().getAttribute("student");
         List<Stu_course> list = new ArrayList<>();
+        List<Elective_courses> list1 = new ArrayList<>();
         String course_code[] = course_codes.split(",");
         for (int i = 0; i < course_code.length; i++) {
-            Stu_course stu_course = new Stu_course(user_info.getId(), Integer.valueOf(course_code[i]));
-            // System.out.println(course_code[i]);
-            list.add(stu_course);
+            int capacity = get_capacityService.getCourse_capacity(Integer.valueOf(course_code[i]));
+            if (capacity > 0) {
+                Stu_course stu_course = new Stu_course(user_info.getId(), Integer.valueOf(course_code[i]));
+                // System.out.println(course_code[i]);
+                list.add(stu_course);
+                Elective_courses elective_courses = new Elective_courses(Integer.valueOf(course_code[i]),capacity-1);
+                list1.add(elective_courses);
+            }
         }
         int i = in_courseService.add_course(list);
-        if (i != 0) {
+        int j = upCapacityService.upCourse_capacity(list1);
+        if (i != 0 && j != 0) {
+            logger.info("更新："+j);
             return new Result(233, "抢课成功了");
         }
         else {

@@ -18,4 +18,5 @@ public class Result implements Serializable{
         this.code = code;
         this.message = massge;
     }
+
 }

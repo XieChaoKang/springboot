@@ -24,9 +24,9 @@ import javax.servlet.http.HttpServletRequest;
  * 登录接口
  */
 @RestController
-public class Stu_Login {
+public class Login {
 
-    Logger logger = LoggerFactory.getLogger(Stu_Login.class);
+    Logger logger = LoggerFactory.getLogger(Login.class);
 
     @Autowired
     Stu_LoginServiceImpl service;
@@ -38,6 +38,9 @@ public class Stu_Login {
     public Result login(@RequestParam ("id") int id, @RequestParam ("password") String password, HttpServletRequest request){
 
         Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated()) {
+            subject.logout();
+        }
 
         UsernamePasswordToken token = new UsernamePasswordToken(String.valueOf(id),password);
 

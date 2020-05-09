@@ -17,6 +17,11 @@ public class Elective_courses {
     public Elective_courses() {
     }
 
+    public Elective_courses(int course_code, int course_capacity) {
+        Course_code = course_code;
+        Course_capacity = course_capacity;
+    }
+
     public Elective_courses(int course_code, int course_capacity, String course_if) {
         Course_code = course_code;
         Course_capacity = course_capacity;

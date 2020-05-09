@@ -3,9 +3,11 @@ package com.xck.demo.Util;
 import com.xck.demo.Model.Course;
 import com.xck.demo.Model.Elective_courses;
 import com.xck.demo.VO.Sel_CourseVO;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
 
 /**
  * @author 谢朝康
@@ -15,11 +17,15 @@ import java.util.List;
 public class Sel_CourseResult {
 
     public static List<Sel_CourseVO> result1(List<Elective_courses> coursesList){
+        Logger logger = LoggerFactory.getLogger(Sel_CourseResult.class);
         List<Sel_CourseVO> list = new ArrayList<>();
         for (Elective_courses elective_courses : coursesList){
-            Course course = elective_courses.getCourse();
-            Sel_CourseVO courseVO = new Sel_CourseVO(course.getCourse_code(),course.getCourse_name(),elective_courses.getCourse_capacity(),course.getCourse_teacher(),course.getCourse_location(),course.getCourse_time(),course.getCredit(),course.getCourse_nature());
-            list.add(courseVO);
+            logger.info("容量："+elective_courses.getCourse_capacity());
+            if(elective_courses.getCourse_capacity() > 0) {
+                Course course = elective_courses.getCourse();
+                Sel_CourseVO courseVO = new Sel_CourseVO(course.getCourse_code(), course.getCourse_name(), elective_courses.getCourse_capacity(), course.getCourse_teacher(), course.getCourse_location(), course.getCourse_time(), course.getCredit(), course.getCourse_nature());
+                list.add(courseVO);
+            }
         }
         return list;
     }
