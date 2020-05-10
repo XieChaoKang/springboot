@@ -21,7 +21,7 @@ public interface Info_ServiceMapper {
     List<Course> sel_course(int id);
 
     //连表查询考试信息
-    @Select("select * from stu_course where stu_id = #{id}")
+    @Select("select * from stu_course where stu_id = #{id} ")
     @Results({
             @Result(column = "stu_id",property = "stu_id"),
             @Result(column = "course_code",property = "course_code"),
@@ -38,6 +38,9 @@ public interface Info_ServiceMapper {
     })
     @Select("select * from test where course_code = #{course_code}")
     List<Test> sel_test(int course_code);
+
+    @Select("select * from score where stu_id = #{id} and Course_code = #{code}")
+    Score selScoreByidAndCode(@Param("id") int id,@Param("code") int code);
 
     //查询姓名
     @Select("select user_info.name from user_info where id = #{id}")

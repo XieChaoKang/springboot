@@ -32,7 +32,7 @@ public class Up_Pass {
     @RequestMapping("/up_pass")
     public Result up_pass(@RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
         Logger logger = LoggerFactory.getLogger(Up_Pass.class);
-
+        logger.info("修改密码");
         user_info user_info1 = (user_info) request.getSession().getAttribute("student");
         String passInDB = service.getPassword(user_info1.getId()).getPassword();
         String salt = user_info1.getSalt();

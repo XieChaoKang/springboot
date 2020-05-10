@@ -13,10 +13,16 @@ import java.io.Serializable;
 public class Result implements Serializable{
     private Integer code;
     private String message;
+    private Object object;
 
     public Result(Integer code, String massge) {
         this.code = code;
         this.message = massge;
     }
 
+    public Result(Integer code, String message, Object object) {
+        this.code = code;
+        this.message = message;
+        this.object = object;
+    }
 }

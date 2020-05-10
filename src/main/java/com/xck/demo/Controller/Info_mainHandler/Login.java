@@ -51,10 +51,10 @@ public class Login {
             user_info user_info = service.Stu_Login(id);
             request.getSession().setAttribute("student",new user_info(user_info.getId(), user_info.getPassword(), user_info.getName(), user_info.getSalt()));
             if (subject.hasRole("student") || subject.hasRole("super_stu")) {
-                return new Result(222, "以学生身份登录成功！");
+                return new Result(222, "以学生身份登录成功！",user_info.getName());
             }
             else {
-                return new Result(333,"以老师身份登录！");
+                return new Result(333,"以老师身份登录！",user_info.getName());
             }
         }
         catch (AuthenticationException a){

@@ -24,14 +24,18 @@
                             },
                             success:function (data) {
                                 if (data.code > 200){
-                                    layer.msg(data.message);
+                                    alert(data.message);
+                                    //alert(data.message);
                                     location.reload();//密码更改完毕后刷新页面
                                 }
-                                else if (data.code > 100 && data.code < 200) {
-                                    layer.msg(data.message);
-                                }
                                 else {
-                                    layer.msg(data.message);
+                                    if (data.code < 200 && data.code > 100) {
+                                        alert(data.message);
+                                    }
+                                    else
+                                    {
+                                        alert(data.message);
+                                    }
                                 }
                             },
                             error:function (arg1) {
@@ -49,6 +53,9 @@
 
     </script>
     <script type="text/javascript">
+        $(document).ready(function () {
+            $("#username").text(sessionStorage.getItem("name"));
+        });
         function getRoles() {
             $.ajax({
                 type:"post",
@@ -93,7 +100,7 @@
     <div style="height: 100%;width: 100%;">
         <div style="height: 70%;width: 100%;">
             <h2 style="color: #0066FF;float: left">XCK程序栈</h2>
-            <p style="color: #080808;float: right"><a href="#" onclick="logout()" style="color: #080808">退出</a></p>
+            <p style="color: #080808;float: right">欢迎您：<span id="username"></span>同学  | <a href="#" onclick="logout()" style="color: #080808">退出</a></p>
         </div>
         <div style="height: 30%;width: 100%;">
             <ul class="nav navbar-nav">
@@ -155,7 +162,7 @@
 
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button type="submit" class="layui-btn"  id="btn">立即提交</button>
+            <button type="button" class="layui-btn"  id="btn">立即提交</button>
         </div>
     </div>
 

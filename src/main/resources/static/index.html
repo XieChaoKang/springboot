@@ -21,10 +21,12 @@
                         console.info(data.code);
                         if (data.code > 300) {
                             //window.location.href="tea_index.html";
+                            sessionStorage.setItem("name",data.object);
                             $(window).attr("location","tea_index.html");
                     }
                         else if (data.code > 200){
                             //window.location.href="stu_index.html";
+                            sessionStorage.setItem("name",data.object);
                             $(window).attr("location","stu_index.html");
                         }
                         else {
