@@ -20,7 +20,10 @@ public class AddStu_Score {
 
     @RequestMapping("/add_score")
     public Result addStu_Score(Score score){
-        int i = modifyStuScoreImpl.AddStuScore(score);
+        int i = 0;
+        if(score.getScore() < 100 && score.getScore() > 0) {
+            i = modifyStuScoreImpl.AddStuScore(score);
+        }
         if (i > 0) {
             return new Result(234, "发布学生成绩成功！");
         } else {

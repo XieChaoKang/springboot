@@ -20,7 +20,10 @@ public class UpdateStu_Score {
 
     @RequestMapping("up_score")
     public Result upStuScore(Score score){
-        int i = upStuScoreImpl.upStuScore(score.getCourse_code(),score.getScore());
+        int i = 0;
+        if (score.getScore() < 100 && score.getScore() > 0) {
+            i = upStuScoreImpl.upStuScore(score.getCourse_code(), score.getScore());
+        }
         if (i > 0){
             return new Result(243,"更改学生成绩成功！");
         }

@@ -88,33 +88,39 @@
                 var course_code = $('#course_code').val();
                 var stu_id = $('#stu_id').val();
                 var score = $('#score').val();
-                $.ajax({
-                    type:"post",
-                    url:"/add_score",
-                    data:{
-                        'course_code':course_code,
-                        'stu_id':stu_id,
-                        'score':score
-                    },
-                    dataType:"json",
-                    success:function(data){
-                        if (data.code > 200) {
-                            layer.msg(data.message);
-                            parent.layer.close();//关闭当前弹窗
-                            window.parent.location.reload();//父页面刷新
+                if (score < 100 && score > 0) {
+                    $.ajax({
+                        type: "post",
+                        url: "/add_score",
+                        data: {
+                            'course_code': course_code,
+                            'stu_id': stu_id,
+                            'score': score
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.code > 200) {
+                                alert(data.message);
+                                parent.layer.close();//关闭当前弹窗
+                                window.parent.location.reload();//父页面刷新
+                            }
+                            else {
+                                alert(data.message);
+                            }
+                        },
+                        error: function (arg1) {
+                            layer.msg("系统错误");
+                            console.log(arg1);
+                            window.location.href = "../../index.html";
                         }
-                        else {
-                            layer.msg(data.message);
-                        }
-                    },
-                    error:function (arg1) {
-                        layer.msg("系统错误");
-                        console.log(arg1);
-                        window.location.href = "../../index.html";
-                    }
-                });
-                return false;
+                    });
+                    return false;
+                }
+                else {
+                    alert("请填写正确的成绩！！！");
+                }
             });
+
 
         });
 
