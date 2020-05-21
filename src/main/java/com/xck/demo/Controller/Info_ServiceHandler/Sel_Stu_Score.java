@@ -9,6 +9,7 @@ import com.xck.demo.Util.ScoreResult;
 import com.xck.demo.VO.Stu_ScoreVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,18 +29,18 @@ public class Sel_Stu_Score {
     //及格成绩
     //@ResponseBody
     @RequestMapping("/sel_score")
-    public JSON Stu_Score(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
-        List<Score> stuCourseList = sel_scoreService.sel_score(user_info.getId());
+    public JSON Stu_Score(@RequestParam("id") int id){
+
+        List<Score> stuCourseList = sel_scoreService.sel_score(id);
         List<Stu_ScoreVO> scores = ScoreResult.Score_Result(stuCourseList);
         return LayerResult.getJson(scores);
     }
 
     //不及格的成绩
     @RequestMapping("/sel_score1")
-    public JSON Stu_Score1(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
-        List<Score> stuCourseList = sel_scoreService.sel_score(user_info.getId());
+    public JSON Stu_Score1(@RequestParam("id") int id){
+
+        List<Score> stuCourseList = sel_scoreService.sel_score(id);
         List<Stu_ScoreVO> scores = ScoreResult.Score_Result1(stuCourseList);
         return LayerResult.getJson(scores);
     }

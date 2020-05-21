@@ -81,6 +81,9 @@
             , height: 400
             , even: true
             , url: '/getStu_Score1' //数据接口
+            ,where: {
+                id:sessionStorage.getItem("id")
+            }
             , page: true //开启分页
             , limit: 10
             ,id:'tests'

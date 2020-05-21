@@ -114,6 +114,9 @@
             , height: 420
             , even: true
             , url: '/sel_course1' //数据接口
+            ,where: {
+                id:sessionStorage.getItem("id")
+            }
             , page: true //开启分页
             , limit: 10
             ,id:'tests'
@@ -152,7 +155,10 @@
                         $.ajax({
                             type:"post",
                             url:"/in_course",
-                            data:{course_codes:course_codes},
+                            data:{
+                                id:sessionStorage.getItem("id"),
+                                course_codes:course_codes
+                            },
                             success:function (data) {
                                 if (data.code == 233){
                                     layer.msg(data.message);

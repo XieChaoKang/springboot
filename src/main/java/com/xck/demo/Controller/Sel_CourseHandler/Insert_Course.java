@@ -38,16 +38,15 @@ public class Insert_Course {
     Up_CapacityServiceImpl upCapacityService;
 
     @RequestMapping("/in_course")
-    public Result test(@RequestParam("course_codes") String course_codes, HttpServletRequest request) {
+    public Result test(@RequestParam("course_codes") String course_codes,@RequestParam("id") int id) {
         logger.info("访问到达");
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
         List<Stu_course> list = new ArrayList<>();
         List<Elective_courses> list1 = new ArrayList<>();
         String course_code[] = course_codes.split(",");
         for (int i = 0; i < course_code.length; i++) {
             int capacity = get_capacityService.getCourse_capacity(Integer.valueOf(course_code[i]));
             if (capacity > 0) {
-                Stu_course stu_course = new Stu_course(user_info.getId(), Integer.valueOf(course_code[i]));
+                Stu_course stu_course = new Stu_course(id, Integer.valueOf(course_code[i]));
                 // System.out.println(course_code[i]);
                 list.add(stu_course);
                 Elective_courses elective_courses = new Elective_courses(Integer.valueOf(course_code[i]),capacity-1);

@@ -9,6 +9,7 @@ import com.xck.demo.Util.Sel_CourseResult;
 import com.xck.demo.VO.Sel_CourseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,17 +27,17 @@ public class Sel_Course {
     Sel_CourseServiceImpl sel_courseService;
 
     @RequestMapping("/sel_course")
-    public JSON sel_course(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
-        List<Elective_courses> list = sel_courseService.sel_ele("A", user_info.getId());
+    public JSON sel_course(@RequestParam("id") int id){
+
+        List<Elective_courses> list = sel_courseService.sel_ele("A", id);
         List<Sel_CourseVO> list1 = Sel_CourseResult.result1(list);
         return LayerResult.getJson(list1);
     }
 
     @RequestMapping("/sel_course1")
-    public JSON sel_course1(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
-        List<Elective_courses> list = sel_courseService.sel_ele("B", user_info.getId());
+    public JSON sel_course1(@RequestParam("id") int id){
+
+        List<Elective_courses> list = sel_courseService.sel_ele("B", id);
         List<Sel_CourseVO> list1 = Sel_CourseResult.result1(list);
         return LayerResult.getJson(list1);
     }

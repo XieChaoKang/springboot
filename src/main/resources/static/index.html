@@ -19,14 +19,19 @@
                     },
                     success:function (data) {
                         console.info(data.code);
+                        console.info(data.data.name);
                         if (data.code > 300) {
                             //window.location.href="tea_index.html";
-                            sessionStorage.setItem("name",data.object);
+                            sessionStorage.setItem("id",data.data.id);
+                            sessionStorage.setItem("name",data.data.name);
+                            sessionStorage.setItem("class",data.data.class);
                             $(window).attr("location","tea_index.html");
                     }
                         else if (data.code > 200){
                             //window.location.href="stu_index.html";
-                            sessionStorage.setItem("name",data.object);
+                            sessionStorage.setItem("id",data.data.id);
+                            sessionStorage.setItem("name",data.data.name);
+                            sessionStorage.setItem("class",data.data.class);
                             $(window).attr("location","stu_index.html");
                         }
                         else {

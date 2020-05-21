@@ -19,7 +19,8 @@ public class Sel_Stu_CourseServiceImpl implements Sel_Stu_CourseService {
     Info_ServiceMapper info_serviceMapper;
 
     @Override
-    public List<Course> sel_course(int id) {
-        return info_serviceMapper.sel_course(id);
+    public List<Course> sel_course(int id,String course_class) {
+       // System.out.println(info_serviceMapper.sel_course(19,"计算机科学与技术二班"));
+        return info_serviceMapper.sel_course(id,course_class);
     }
 }

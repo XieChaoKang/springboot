@@ -9,5 +9,5 @@ import java.util.List;
  * @date 2020/4/23 17:45
  */
 public interface Sel_Stu_CourseService {
-    List<Course> sel_course(int id);
+    List<Course> sel_course(int id,String course_class);
 }

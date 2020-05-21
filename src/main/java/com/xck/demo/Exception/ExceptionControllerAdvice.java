@@ -2,6 +2,8 @@ package com.xck.demo.Exception;
 
 import com.xck.demo.Util.Result;
 import org.apache.shiro.authc.AuthenticationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,5 +26,12 @@ public class ExceptionControllerAdvice {
     @ExceptionHandler(AuthenticationException.class)
     public Result LoginException(AuthenticationException e){
         return new Result(1002,"密码错误！！"+e.getMessage());
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public Result NullException(NullPointerException e){
+        Logger logger = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
+        logger.info(e.getMessage());
+        return new Result(1003,"用户信息失效，请重新登录!!");
     }
 }

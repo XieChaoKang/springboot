@@ -12,6 +12,7 @@ import com.xck.demo.VO.Tea_ScoreVO;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,13 +37,13 @@ public class GetStudentScore {
 
     //老师发布成绩使用的学生成绩信息接口
     @RequestMapping("/getStu_Score")
-    public JSON getStu_Score(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
+    public JSON getStu_Score(@RequestParam("id") int id){
+
         List<Course> courseList ;
         List<user_info> userInfos ;
         List<Score> scores;
         List<Tea_ScoreVO> scoreVOS = new ArrayList<>();
-        courseList = getCourseByIdImpl.getCourseById(user_info.getId());
+        courseList = getCourseByIdImpl.getCourseById(id);
         for (Course course:courseList){
             userInfos = getStu_infoById.GetStu_infoByid(course.getCourse_code());
             for (user_info user_info1 : userInfos) {
@@ -60,13 +61,13 @@ public class GetStudentScore {
 
     //老师更改成绩使用的学生成绩信息接口
     @RequestMapping("/getStu_Score1")
-    public JSON getStu_Score1(HttpServletRequest request){
-        user_info user_info = (user_info) request.getSession().getAttribute("student");
+    public JSON getStu_Score1(@RequestParam("id") int id){
+
         List<Course> courseList ;
         List<Score> scores ;
         List<user_info> userInfos ;
         List<Tea_ScoreVO> scoreVOS = new ArrayList<>();
-        courseList = getCourseByIdImpl.getCourseById(user_info.getId());
+        courseList = getCourseByIdImpl.getCourseById(id);
         for (Course course:courseList){
             userInfos = getStu_infoById.GetStu_infoByid(course.getCourse_code());
             for (user_info user_info1 : userInfos) {

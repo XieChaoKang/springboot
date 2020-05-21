@@ -19,6 +19,7 @@
                             type: "post",
                             url: "/up_pass",
                             data: {
+                                "id":sessionStorage.getItem("id"),
                                 "password":password,
                                 "new_pass":new_pass
                             },

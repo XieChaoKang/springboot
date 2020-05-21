@@ -5,6 +5,7 @@ import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Change_PassSer
 import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl;
 import com.xck.demo.Util.Result;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,19 +31,20 @@ public class Up_Pass {
 
     @ResponseBody
     @RequestMapping("/up_pass")
-    public Result up_pass(@RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
+    public Result up_pass(@RequestParam("id") int id,@RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
         Logger logger = LoggerFactory.getLogger(Up_Pass.class);
         logger.info("修改密码");
-        user_info user_info1 = (user_info) request.getSession().getAttribute("student");
-        String passInDB = service.getPassword(user_info1.getId()).getPassword();
-        String salt = user_info1.getSalt();
+
+        String passInDB = service.getPassword(id).getPassword();
+        //String salt = user_info1.getSalt();
+        String salt = String.valueOf(ByteSource.Util.bytes(String.valueOf(id)));
 
         String md5 = new SimpleHash("md5", password,salt,2).toString();
 
         //判断用户旧密码是否正确
         if (md5.equals(passInDB)){
             logger.info("修改密码到达");
-            user_info user_info = new user_info(user_info1.getId(),new SimpleHash("md5",new_pass,salt,2).toString());
+            user_info user_info = new user_info(id,new SimpleHash("md5",new_pass,salt,2).toString());
             //更改密码
             if( change_passService.Up_Pass(user_info) != 0){
                 return new Result(222,"修改成功");

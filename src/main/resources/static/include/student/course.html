@@ -104,6 +104,10 @@
             , height: 420
             , even: true
             , url: '/get_course' //数据接口
+            ,where: {
+                id:sessionStorage.getItem("id"),
+                class1:sessionStorage.getItem("class")
+            }
             , page: true //开启分页
             , limit: 10
             ,id:'tests'

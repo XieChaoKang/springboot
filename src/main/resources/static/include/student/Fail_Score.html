@@ -25,6 +25,9 @@
             , height: 312
             , even: true
             , url: '/sel_score1' //数据接口
+            ,where: {
+                id:sessionStorage.getItem("id")
+            }
             , limit: 10
             ,id:'tests'
             , cols: [[ //表头{type:'checkbox'}

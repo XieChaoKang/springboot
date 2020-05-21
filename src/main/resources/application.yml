@@ -1,9 +1,10 @@
 spring:
+  # 数据库配置
   datasource:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://182.92.130.191:3306/ssm?serverTimezone=UTC&allowMultiQueries=true
+    url: jdbc:mysql://182.92.130.191:3306/ssm?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -14,7 +15,7 @@ spring:
     minEvictableIdleTimeMillis: 300000
     validationQuery: SELECT 1 FROM DUAL
     testWhileIdle: true
-    testOnBorrow: false
+    testOnBorrow: true
     testOnReturn: false
     poolPreparedStatements: true
     #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
@@ -22,5 +23,26 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-  thymeleaf:
-    cache: false
+
+
+  # redis配置
+  redis:
+    host: 182.92.130.191
+    port: 6380
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+        max-idle: 8
+    lettuce:
+      shutdown-timeout: 5000
+logging:
+  level:
+    com.xck.demo.Mapper: info
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  
+

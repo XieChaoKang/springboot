@@ -24,6 +24,11 @@ public class InfoVO {
     private String Major_name;//专业名
     private String Administrative_class;//专业班级
 
+    public InfoVO(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public InfoVO(int id, String name, String gender, String birthday, String nationality, String ID_card, String political_status, String address, String phone, String department, String major_name, String administrative_class) {
         this.id = id;
         this.name = name;

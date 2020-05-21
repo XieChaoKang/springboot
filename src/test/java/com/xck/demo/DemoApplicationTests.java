@@ -9,7 +9,10 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URLEncoder;
@@ -19,11 +22,15 @@ import java.util.List;
 @SpringBootTest
 public class DemoApplicationTests {
 
+	@Autowired
+	private RedisTemplate<String,String> redisTemplate;
     //SpringBoot 默认日志slf4j 已配置好 直接使用
 	Logger logger = LoggerFactory.getLogger(DemoApplicationTests.class);
 
-	@Test
-	public void contextLoads() {
+	public void testJedis(){
+		System.out.println("============");
+		ValueOperations<String, String> operations = redisTemplate.opsForValue();
+		System.out.println(operations.get("k1"));
 	}
 
 	@Test

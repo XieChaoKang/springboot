@@ -16,9 +16,14 @@ import java.util.List;
 @Mapper
 public interface Info_ServiceMapper {
 
-    @Select("select course.course_name,course.course_teacher,course.course_location,course.course_time from stu_course "
-    +"left join course on course.course_code = stu_course.course_code where stu_course.stu_id = #{id} and stu_course.course_code not in(select course_code from score where stu_id = #{id})")
-    List<Course> sel_course(int id);
+    @Select("select course.course_name,course.course_teacher,course.course_location,course.course_time from stu_course left join course on course.course_code = stu_course.course_code where stu_course.stu_id = #{id} and ( course.course_class = #{course_class} or course.course_class = 1 ) and stu_course.course_code not in(select course_code from score where stu_id = #{id})")
+    @Results({
+            @Result(column = "course_name",property = "Course_name"),
+            @Result(column = "course_teacher",property = "Course_teacher"),
+            @Result(column = "course_location",property = "Course_location"),
+            @Result(column = "course_time",property = "Course_time")
+    })
+    List<Course> sel_course(@Param("id") int id,@Param("course_class") String course_class);
 
     //连表查询考试信息
     @Select("select * from stu_course where stu_id = #{id} ")

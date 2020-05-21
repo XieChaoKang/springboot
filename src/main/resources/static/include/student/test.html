@@ -104,6 +104,9 @@
             , height: 420
             , even: true
             , url: '/sel_test' //数据接口
+            ,where: {
+                id:sessionStorage.getItem("id")
+            }
             , page: true //开启分页
             , limit: 10
             ,id:'tests'
