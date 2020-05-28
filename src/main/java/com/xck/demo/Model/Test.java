@@ -3,13 +3,18 @@ package com.xck.demo.Model;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author 谢朝康
  * @date 2020/4/4 14:13
  * 考试信息
  */
 @Data
-public class Test {
+public class Test implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private int Course_code;//课程代码
     private String Course_name;//课程名
    // private String Student_name;//学生名

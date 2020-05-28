@@ -44,19 +44,14 @@ public class DemoApplicationTests {
 	    logger.error("error");
     }
 
-    @Test
-    public void testpwd() throws Exception{
-		ByteSource s = ByteSource.Util.bytes("19");
-		System.out.println("盐值："+s);
-		String pwd = URLEncoder.encode("123","utf-8");
-		String s1 = URLEncoder.encode("MTcwODAxMDEzOA==","utf-8");
-		String s2 = URLEncoder.encode("MTcwODAxMDEzOA==","GBK");
-		System.out.println("MD5+盐两次加密后的密码"+ new SimpleHash("md5","11",s,2).toString()+"  "+s+"\n");
-		System.out.println(new SimpleHash("md5",pwd,s1,2).toString()+"\n");
-		System.out.println(new SimpleHash("md5",pwd,s2,2).toString()+"\n");
-		System.out.println(new SimpleHash("md5",pwd,"MTk=",2).toString()+"\n");//
-		System.out.println(new SimpleHash("md5","123","MTk=",2).toString()+"\n");//
-		System.out.println(new SimpleHash("md5","123",s1,2).toString()+"\n");
+    public static void main(String args[]) throws Exception{
+		String username = "19";
+		String pwd = "1234";
+		//0cd44355fd830ba2150f68d77f2d2269
+
+		System.out.println(new SimpleHash("MD5", pwd, username, 2).toString());
+//		System.out.println("MD5+盐两次加密后的密码"+ new SimpleHash("MD5","1234",username,2));
+		//60ced2479e5530acb6a7e61192fb216b
 	}
 
 }

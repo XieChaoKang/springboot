@@ -3,6 +3,7 @@ package com.xck.demo.Controller.Info_mainHandler;
 import com.xck.demo.Model.user_info;
 import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Change_PassServiceImpl;
 import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl;
+import com.xck.demo.Shiro.util.JwtUtil;
 import com.xck.demo.Util.Result;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
@@ -31,11 +32,14 @@ public class Up_Pass {
 
     @ResponseBody
     @RequestMapping("/up_pass")
-    public Result up_pass(@RequestParam("id") int id,@RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
+    public Result up_pass(HttpServletRequest servletRequest,@RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
         Logger logger = LoggerFactory.getLogger(Up_Pass.class);
         logger.info("修改密码");
+        String token = servletRequest.getHeader("AccessToken");
+        //System.out.println("获取到token:"+token+"  id:"+ JwtUtil.getId(token));
+        String id = JwtUtil.getId(token);
 
-        String passInDB = service.getPassword(id).getPassword();
+        String passInDB = service.getPassword(Integer.parseInt(id)).getPassword();
         //String salt = user_info1.getSalt();
         String salt = String.valueOf(ByteSource.Util.bytes(String.valueOf(id)));
 

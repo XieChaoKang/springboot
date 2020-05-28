@@ -21,6 +21,9 @@
             $.ajax({
                 type:"post",
                 url:"/getRoles",
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
                 contentType: 'application/json;charset=utf-8',
                 success:function (data) {
                     if (data.code > 200){
@@ -104,8 +107,8 @@
             , height: 420
             , even: true
             , url: '/sel_info'/*?id='+sessionStorage.getItem("id")*/ //数据接口
-            ,where: {
-                id:sessionStorage.getItem("id")
+            ,headers: {
+                AccessToken:sessionStorage.getItem("token")
             }
             ,id:'tests'
             , cols: [[ //表头{type:'checkbox'}

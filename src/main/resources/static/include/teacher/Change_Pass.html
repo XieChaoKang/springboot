@@ -19,9 +19,11 @@
                             type: "post",
                             url: "/up_pass",
                             data: {
-                                "id":sessionStorage.getItem("id"),
                                 "password":password,
                                 "new_pass":new_pass
+                            },
+                            headers: {
+                                AccessToken:sessionStorage.getItem("token")
                             },
                             success:function (data) {
                                 if (data.code > 200){
@@ -61,6 +63,9 @@
             $.ajax({
                 type:"post",
                 url:"/getRoles",
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
                 contentType: 'application/json;charset=utf-8',
                 success:function (data) {
                     if (data.code > 200){

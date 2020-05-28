@@ -19,8 +19,8 @@
             , height: 400
             , even: true
             , url: '/sel_score' //数据接口
-            ,where: {
-                id:sessionStorage.getItem("id")
+            ,headers: {
+                AccessToken:sessionStorage.getItem("token")
             }
             , page: true //开启分页
             , limit: 10

@@ -2,13 +2,17 @@ package com.xck.demo.VO;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author 谢朝康
  * @date 2020/4/11 0:39
  * 封装考试信息所需类
  */
 @Data
-public class Stu_test {
+public class Stu_test implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int stu_id;//学生id
     private int course_code;//课程代码

@@ -2,6 +2,7 @@ package com.xck.demo.Model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -10,7 +11,10 @@ import java.util.List;
  * 学生选择的课程
  */
 @Data
-public class Stu_course {
+public class Stu_course implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private int stu_id;//学生id
     private int course_code;//课程代码
     private Test test;

@@ -38,11 +38,11 @@ spring:
         max-idle: 8
     lettuce:
       shutdown-timeout: 5000
-logging:
-  level:
-    com.xck.demo.Mapper: info
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#logging:
+ # level:
+  #  com.xck.demo.Mapper: info
+#mybatis:
+ # configuration:
+  #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   
 

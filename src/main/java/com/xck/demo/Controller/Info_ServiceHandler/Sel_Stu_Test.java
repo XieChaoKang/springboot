@@ -6,9 +6,13 @@ import com.xck.demo.Model.Stu_course;
 import com.xck.demo.Model.user_info;
 import com.xck.demo.Service.Info_Service.Info_ServiceImpl.ScoreByIdAndCodeImpl;
 import com.xck.demo.Service.Info_Service.Info_ServiceImpl.Sel_TestServiceImpl;
+import com.xck.demo.Shiro.util.JwtUtil;
 import com.xck.demo.Util.LayerResult;
+import com.xck.demo.Util.RedisUtil;
 import com.xck.demo.VO.Stu_test;
 import com.xck.demo.Util.TestResult;
+import com.xck.demo.constant.RedisConstant;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,25 +33,25 @@ import java.util.concurrent.TimeUnit;
 public class Sel_Stu_Test {
 
     @Autowired
-    private RedisTemplate<String,Object> ListredisTemplate;
-
-    @Autowired
     Sel_TestServiceImpl testService;
 
     @Autowired
     ScoreByIdAndCodeImpl scoreByIdAndCodeImpl;
 
     @RequestMapping("/sel_test")
-    public JSON sel_test1(@RequestParam("id")int id){
-        String key = "test::"+id;
+    public JSON sel_test1(HttpServletRequest servletRequest){
+        LoggerFactory.getLogger(Sel_Stu_Test.class).info("考试到达！！");
+        String token = servletRequest.getHeader("AccessToken");
+        System.out.println("获取到token:"+token+"  id:"+ JwtUtil.getId(token));
+        String id = JwtUtil.getId(token);
+        String key = RedisConstant.TEST_PREFIX+id;
 
-        boolean redisKey = ListredisTemplate.hasKey(key);
-        if (redisKey){
-            Object object =  ListredisTemplate.opsForValue().get(key);
+        if (RedisUtil.get(key) != null){
+            Object object =  RedisUtil.get(key);
             return LayerResult.getJson((List) object);
         }
         else {
-            List<Stu_course> stu_courses = testService.sel_test(id);
+            List<Stu_course> stu_courses = testService.sel_test(Integer.parseInt(id));
             for (int i = 0; i < stu_courses.size(); i++) {
                 Score score = scoreByIdAndCodeImpl.getScore(stu_courses.get(i).getStu_id(), stu_courses.get(i).getCourse_code());
                 if (null != score) {
@@ -59,10 +63,10 @@ public class Sel_Stu_Test {
                     i--;
                 }
             }
-            String name = testService.sel_name(id);
+            String name = testService.sel_name(Integer.parseInt(id));
             List<Stu_test> stu_tests;
             stu_tests = TestResult.result(stu_courses, name);
-            ListredisTemplate.opsForValue().set(key,stu_tests,2, TimeUnit.DAYS);
+            RedisUtil.set(key,stu_tests,2, TimeUnit.DAYS);
             return LayerResult.getJson(stu_tests);
         }
     }

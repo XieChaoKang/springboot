@@ -2,6 +2,7 @@ package com.xck.demo.Mapper;
 
 import com.xck.demo.Model.user_info;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
@@ -30,4 +31,8 @@ public interface Info_mainMapper {
 
     @Update("update user_info set password = #{password} where id = #{id}")
     int Up_Pass(user_info user_info);
+
+
+    @Select("SELECT * FROM user_info WHERE id = #{id} and password = #{password} ")
+    user_info getUserInfoByIdAndPassword(@Param("id") int id,@Param("password") String password);
 }

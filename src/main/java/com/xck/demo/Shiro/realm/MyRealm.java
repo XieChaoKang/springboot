@@ -1,9 +1,12 @@
-package com.xck.demo.Shiro;
+package com.xck.demo.Shiro.realm;
 
 import com.xck.demo.Model.user_info;
 import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Stu_getPasswordImpl;
 import com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetPermissionServiceImpl;
 import com.xck.demo.Service.Shiro_Service.Shiro_ServiceImpl.GetRolesServiceImpl;
+import com.xck.demo.Shiro.util.JwtUtil;
+import com.xck.demo.Util.RedisUtil;
+import com.xck.demo.constant.RedisConstant;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -11,6 +14,7 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
@@ -36,13 +40,29 @@ public class MyRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) throws NullPointerException {
-        String id = (String) principalCollection.getPrimaryPrincipal();
-        Set<String> roles = rolesService.sel_roles(Integer.parseInt(id));
-        Set<String> permissions = permissionService.listpermissionById(Integer.parseInt(id));
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        info.setRoles(roles);
-        info.setStringPermissions(permissions);
-        return info;
+        String id = (String) principalCollection.getPrimaryPrincipal();
+        Set<String> roles = (Set<String>) RedisUtil.get( RedisConstant.SHIRO_ROLES_PREFIX+ id);
+        Set<String> permissions = (Set<String>) RedisUtil.get(RedisConstant.SHIRO_PERMISSIONS_PREFIX+id);
+        if (roles != null && permissions!= null) {
+            LoggerFactory.getLogger(JwtRealm.class).info("从缓存里拿到角色和权限信息");
+            info.setRoles(roles);
+            info.setStringPermissions(permissions);
+            return info;
+        }
+        else {
+            roles = rolesService.sel_roles(Integer.parseInt(id));
+            permissionService.listpermissionById(Integer.parseInt(id));
+            info.setRoles(roles);
+            info.setStringPermissions(permissions);
+
+            RedisUtil.set(RedisConstant.SHIRO_ROLES_PREFIX+id,roles,RedisConstant.SHIRO_EXPIRE);
+            RedisUtil.set(RedisConstant.SHIRO_PERMISSIONS_PREFIX+id,permissions,RedisConstant.SHIRO_EXPIRE);
+
+            LoggerFactory.getLogger(JwtRealm.class).info("roles:{}"+roles);
+
+            return info;
+        }
     }
 
     /**

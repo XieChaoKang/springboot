@@ -24,7 +24,12 @@ public class Stu_getPasswordImpl implements Stu_getPassword {
      * @return 用户实体
      * */
     @Override
-    public user_info getPassword(@NotNull int id) {
+    public  user_info getPassword(@NotNull int id) {
         return infoMainMapper1.getPassword(id);
+    }
+
+    @Override
+    public user_info getUserInfoByIdAndPassword(int id, String password) {
+        return infoMainMapper1.getUserInfoByIdAndPassword(id,password);
     }
 }

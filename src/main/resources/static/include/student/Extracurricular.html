@@ -16,6 +16,9 @@
             $.ajax({
                 type:"post",
                 url:"/getRoles",
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
                 contentType: 'application/json;charset=utf-8',
                 success:function (data) {
                     if (data.code > 200){
@@ -114,8 +117,8 @@
             , height: 420
             , even: true
             , url: '/sel_course' //数据接口
-            ,where: {
-                id:sessionStorage.getItem("id")
+            ,headers: {
+                AccessToken:sessionStorage.getItem("token")
             }
             , page: true //开启分页
             , limit: 10
@@ -152,8 +155,10 @@
                             type:"post",
                             url:"/in_course",
                             data:{
-                                id:sessionStorage.getItem("id"),
                                 course_codes:course_codes
+                            },
+                            headers:{
+                                AccessToken:sessionStorage.getItem("token")
                             },
                             success:function (data) {
                                 if (data.code == 233){

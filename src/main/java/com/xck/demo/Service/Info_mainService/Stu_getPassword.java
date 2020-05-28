@@ -1,6 +1,7 @@
 package com.xck.demo.Service.Info_mainService;
 
 import com.xck.demo.Model.user_info;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author 谢朝康
@@ -8,4 +9,6 @@ import com.xck.demo.Model.user_info;
  */
 public interface Stu_getPassword {
     user_info getPassword(int id);
+
+    user_info getUserInfoByIdAndPassword(@Param("id") int id, @Param("password") String password);
 }

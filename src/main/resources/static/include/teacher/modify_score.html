@@ -18,6 +18,24 @@
         $(document).ready(function () {
             $("#username").text(sessionStorage.getItem("name"));
         });
+        function getRoles() {
+            $.ajax({
+                type:"post",
+                url:"/getRoles",
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
+                contentType: 'application/json;charset=utf-8',
+                success:function (data) {
+                    if (data.code > 200){
+                        window.location.href = "modify_score.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
         function logout() {
             $.ajax({
                 type: "post",
@@ -81,8 +99,8 @@
             , height: 400
             , even: true
             , url: '/getStu_Score1' //数据接口
-            ,where: {
-                id:sessionStorage.getItem("id")
+            ,headers: {
+                AccessToken:sessionStorage.getItem("token")
             }
             , page: true //开启分页
             , limit: 10

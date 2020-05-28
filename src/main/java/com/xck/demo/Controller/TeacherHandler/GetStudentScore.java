@@ -1,12 +1,14 @@
 package com.xck.demo.Controller.TeacherHandler;
 
 import com.alibaba.fastjson.JSON;
+import com.xck.demo.Controller.Info_ServiceHandler.Sel_Stu_Course;
 import com.xck.demo.Model.Course;
 import com.xck.demo.Model.Score;
 import com.xck.demo.Model.user_info;
 import com.xck.demo.Service.Tea_Service.Tea_ServiceImpl.GetCourseByIdImpl;
 import com.xck.demo.Service.Tea_Service.Tea_ServiceImpl.GetScoreByIdAndCodeImpl;
 import com.xck.demo.Service.Tea_Service.Tea_ServiceImpl.GetStu_infoByIdImpl;
+import com.xck.demo.Shiro.util.JwtUtil;
 import com.xck.demo.Util.LayerResult;
 import com.xck.demo.VO.Tea_ScoreVO;
 import org.slf4j.LoggerFactory;
@@ -37,13 +39,16 @@ public class GetStudentScore {
 
     //老师发布成绩使用的学生成绩信息接口
     @RequestMapping("/getStu_Score")
-    public JSON getStu_Score(@RequestParam("id") int id){
-
+    public JSON getStu_Score(HttpServletRequest servletRequest){
+        LoggerFactory.getLogger(GetStudentScore.class).info("老师课程到达！！");
+        String token = servletRequest.getHeader("AccessToken");
+        System.out.println("获取到token:"+token+"  id:"+ JwtUtil.getId(token));
+        String id = JwtUtil.getId(token);
         List<Course> courseList ;
         List<user_info> userInfos ;
         List<Score> scores;
         List<Tea_ScoreVO> scoreVOS = new ArrayList<>();
-        courseList = getCourseByIdImpl.getCourseById(id);
+        courseList = getCourseByIdImpl.getCourseById(Integer.parseInt(id));
         for (Course course:courseList){
             userInfos = getStu_infoById.GetStu_infoByid(course.getCourse_code());
             for (user_info user_info1 : userInfos) {
@@ -61,13 +66,16 @@ public class GetStudentScore {
 
     //老师更改成绩使用的学生成绩信息接口
     @RequestMapping("/getStu_Score1")
-    public JSON getStu_Score1(@RequestParam("id") int id){
-
+    public JSON getStu_Score1(HttpServletRequest servletRequest){
+        LoggerFactory.getLogger(GetStudentScore.class).info("老师课程到达！！");
+        String token = servletRequest.getHeader("AccessToken");
+        System.out.println("获取到token:"+token+"  id:"+ JwtUtil.getId(token));
+        String id = JwtUtil.getId(token);
         List<Course> courseList ;
         List<Score> scores ;
         List<user_info> userInfos ;
         List<Tea_ScoreVO> scoreVOS = new ArrayList<>();
-        courseList = getCourseByIdImpl.getCourseById(id);
+        courseList = getCourseByIdImpl.getCourseById(Integer.parseInt(id));
         for (Course course:courseList){
             userInfos = getStu_infoById.GetStu_infoByid(course.getCourse_code());
             for (user_info user_info1 : userInfos) {

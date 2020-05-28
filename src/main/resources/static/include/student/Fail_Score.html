@@ -25,8 +25,8 @@
             , height: 312
             , even: true
             , url: '/sel_score1' //数据接口
-            ,where: {
-                id:sessionStorage.getItem("id")
+            ,headers: {
+                AccessToken:sessionStorage.getItem("token")
             }
             , limit: 10
             ,id:'tests'

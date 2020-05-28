@@ -3,6 +3,7 @@ package com.xck.demo.Controller.Info_mainHandler;
 import com.alibaba.fastjson.JSON;
 import com.xck.demo.Model.user_info;
 import com.xck.demo.Service.Info_mainService.Info_mainServiceImpl.Sel_InfoServiceImpl;
+import com.xck.demo.Shiro.util.JwtUtil;
 import com.xck.demo.Util.LayerResult;
 import com.xck.demo.VO.InfoVO;
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +32,11 @@ public class Sel_Info {
     Sel_InfoServiceImpl sel_infoService;
 
     @RequestMapping("/sel_info")
-    public JSON Select_Info(@RequestParam("id") int id){
-
-        user_info user_info1 = sel_infoService.sel(id);
+    public JSON Select_Info(HttpServletRequest servletRequest){
+        String token = servletRequest.getHeader("AccessToken");
+        System.out.println("获取到token:"+token+"  id:"+JwtUtil.getId(token));
+        String id = JwtUtil.getId(token);
+        user_info user_info1 = sel_infoService.sel(Integer.parseInt(id));
         InfoVO infoVO = new InfoVO(user_info1.getId(),user_info1.getName(),user_info1.getGender(),user_info1.getBirthday(),user_info1.getNationality(),user_info1.getID_card(),user_info1.getPolitical_status(),user_info1.getAddress(),user_info1.getPhone(),user_info1.getDepartment(),user_info1.getMajor_name(),user_info1.getAdministrative_class());
         List<InfoVO> list = new ArrayList<>();
         list.add(infoVO);

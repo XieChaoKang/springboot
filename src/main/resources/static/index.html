@@ -22,16 +22,17 @@
                         console.info(data.data.name);
                         if (data.code > 300) {
                             //window.location.href="tea_index.html";
-                            sessionStorage.setItem("id",data.data.id);
+                            //sessionStorage.setItem("id",data.data.id);
                             sessionStorage.setItem("name",data.data.name);
-                            sessionStorage.setItem("class",data.data.class);
+                            //sessionStorage.setItem("class",data.data.class);
+                            sessionStorage.setItem("token",data.data.accessToken);
                             $(window).attr("location","tea_index.html");
-                    }
-                        else if (data.code > 200){
+                    } else if (data.code > 200){
                             //window.location.href="stu_index.html";
-                            sessionStorage.setItem("id",data.data.id);
+                            //sessionStorage.setItem("id",data.data.id);
                             sessionStorage.setItem("name",data.data.name);
-                            sessionStorage.setItem("class",data.data.class);
+                            sessionStorage.setItem("token",data.data.accessToken);
+                            //sessionStorage.setItem("class",data.data.class);
                             $(window).attr("location","stu_index.html");
                         }
                         else {
