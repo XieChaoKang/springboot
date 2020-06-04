@@ -109,11 +109,11 @@ public class ShiroConfig {
         return myRealm;
     }
    // @Bean
-    public DBRealm dbRealm(){
+   /* public DBRealm dbRealm(){
         DBRealm dbRealm = new DBRealm();
         dbRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return dbRealm;
-    }
+    }*/
 
     /*@Bean
     public JwtRealm jwtRealm(){

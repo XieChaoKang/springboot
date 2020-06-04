@@ -85,49 +85,4 @@ public class Login {
 
     }
 
-    /*public Result login(@RequestParam ("id") int id, @RequestParam ("password") String password){
-
-        HashMap<String, Object> map = new HashMap<>();
-        Subject subject = SecurityUtils.getSubject();
-
-//        UsernamePasswordToken token = new UsernamePasswordToken(String.valueOf(id),password);
-
-        Map info = new HashMap();
-        info.put("id",String.valueOf(id));
-        info.put("pass",String.valueOf(password));
-        String  token = JwtUtil.sign(password,info);
-        JwtToken jwtToken = new JwtToken(token);
-
-        try {
-            logger.info("方法到达！！");
-            subject.login(jwtToken);
-
-            user_info user_info = service.Stu_Login(id);
-            map.put("id",user_info.getId());
-            map.put("name",user_info.getName());
-            map.put("class",user_info.getAdministrative_class());
-        }
-        catch (AuthenticationException a){
-            logger.info("异常："+a.getMessage());
-            return new Result(111,"账号或密码错误！");
-        }
-        if (subject.isAuthenticated()){
-            String accessToken = JwtUtil.sign(password, map);
-            System.out.println("token:::"+accessToken);
-            RedisUtil.set( RedisConstant.TOKEN_PREFIX+id,accessToken,RedisConstant.EXPIRE_TIME);
-            map.put("accessToken",accessToken);
-            map.remove("id");
-            map.remove("class");
-            if (subject.hasRole("student") || subject.hasRole("super_stu")) {
-                return  Result.success(222, "以学生身份登录成功！",map);
-            }
-            else {
-                return  Result.success(333,"以老师身份登录！",map);
-            }
-        }
-
-        return new Result(111,"登录失败");
-
-    }
-*/
 }

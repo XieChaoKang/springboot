@@ -2,9 +2,9 @@ spring:
   # 数据库配置
   datasource:
     username: root
-    password: 123456
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://182.92.130.191:3306/ssm?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url:
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -27,7 +27,7 @@ spring:
 
   # redis配置
   redis:
-    host: 182.92.130.191
+    host:
     port: 6380
     password:
     jedis:
@@ -42,7 +42,7 @@ spring:
  # level:
   #  com.xck.demo.Mapper: info
 #mybatis:
- # configuration:
+  #configuration:
   #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   
 

@@ -44,11 +44,12 @@ public class DemoApplicationTests {
 	    logger.error("error");
     }
 
-    public static void main(String args[]) throws Exception{
+    @Test
+    public  void test() throws Exception{
 		String username = "19";
 		String pwd = "1234";
 		//0cd44355fd830ba2150f68d77f2d2269
-
+		System.out.println(ByteSource.Util.bytes("19")+"\n");
 		System.out.println(new SimpleHash("MD5", pwd, username, 2).toString());
 //		System.out.println("MD5+盐两次加密后的密码"+ new SimpleHash("MD5","1234",username,2));
 		//60ced2479e5530acb6a7e61192fb216b
