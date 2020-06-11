@@ -79,7 +79,7 @@ public class Login {
             }
         }
         catch (AuthenticationException a){
-             logger.info("登录异常："+a.getMessage());
+            logger.info("登录异常："+a.getMessage());
             return new Result(111,"账号或密码错误！");
         }
 

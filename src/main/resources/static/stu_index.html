@@ -6,7 +6,6 @@
     <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap/bootstrap.min.js"></script>
-    <script src="JS/MyJQ.js"></script>
     <style>
         body{
             padding-top: 80px;
@@ -25,6 +24,24 @@
                 success:function (data) {
                     if (data.code > 200) {
                         window.location.href = "index.html"
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                }
+            })
+        }
+        function getRoles() {
+            $.ajax({
+                type:"post",
+                url:"/getRoles",
+                contentType: 'application/json;charset=utf-8',
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
+                success:function (data) {
+                    if (data.code > 200){
+                        window.location.href = "include/student/Info_FeedBack.html"
                     }
                     else {
                         alert(data.message);
@@ -68,7 +85,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">信息反馈<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" onclick="getRoles('include/student/Info_FeedBack.html')">信息反馈</a></li>
+                            <li><a href="#" onclick="getRoles()">信息反馈</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <script src="JS/jquery-3.4.1.js"></script>
     <link href="css/bootstrap/3.3.6/bootstrap.min.css">
     <link href="css/bootstrap/3.3.6/signin.css" rel="stylesheet">
-    <script src="JS/jquery.min.js" ></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.loginBtn').click(function () {
@@ -19,20 +19,13 @@
                     },
                     success:function (data) {
                         console.info(data.code);
-                        console.info(data.data.name);
                         if (data.code > 300) {
-                            //window.location.href="tea_index.html";
-                            //sessionStorage.setItem("id",data.data.id);
                             sessionStorage.setItem("name",data.data.name);
-                            //sessionStorage.setItem("class",data.data.class);
                             sessionStorage.setItem("token",data.data.accessToken);
                             $(window).attr("location","tea_index.html");
                     } else if (data.code > 200){
-                            //window.location.href="stu_index.html";
-                            //sessionStorage.setItem("id",data.data.id);
                             sessionStorage.setItem("name",data.data.name);
                             sessionStorage.setItem("token",data.data.accessToken);
-                            //sessionStorage.setItem("class",data.data.class);
                             $(window).attr("location","stu_index.html");
                         }
                         else {

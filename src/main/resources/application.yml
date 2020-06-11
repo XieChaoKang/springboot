@@ -2,9 +2,9 @@ spring:
   # 数据库配置
   datasource:
     username: root
-    password:
+    password: Admin123!
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:
+    url: jdbc:mysql://182.92.130.191:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -27,7 +27,7 @@ spring:
 
   # redis配置
   redis:
-    host:
+    host: 182.92.130.191
     port: 6380
     password:
     jedis:

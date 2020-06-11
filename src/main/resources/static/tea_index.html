@@ -20,6 +20,9 @@
                 type:"post",
                 url:"/getRoles",
                 contentType: 'application/json;charset=utf-8',
+                headers: {
+                    AccessToken:sessionStorage.getItem("token")
+                },
                 success:function (data) {
                     if (data.code > 200){
                         window.location.href = "include/teacher/add_score.html"
