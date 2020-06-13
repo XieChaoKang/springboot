@@ -1,6 +1,7 @@
 # springboot
-springboot+shiro
-基于springboot做的简单版教务系统，利用shiro做权限控制，MD5来进行数据加密；
-以MyBatis框架做持久层，与数据库进行交互；
-数据库MySQL,已更新并入redis作为缓存；
-前端使用bootstrap和layui两个框架来展示信息，通过jQuery的ajax来发送请求；
+该项目是一个基于Spring Boot的简单版教务系统，主要分为教师端和学生端。学生端主要模块为：个人信息模块，选课模块，查看课表/成绩/考试信息模块等；教师端主要模块为：个人信息模块，修改学生成绩模块，发布学生成绩模块。
+前端使用Layui+BootStrap开发，后端使用Spring Boot开发。
+技术点：Spring Boot，MyBatis，JWT，Shiro，Redis等。
+使用Shiro+JWT实现安全登录和开发权限系统，提供系统安全性。
+使用Redis做缓存。
+
