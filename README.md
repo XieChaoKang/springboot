@@ -4,4 +4,4 @@
 技术点：Spring Boot，MyBatis，JWT，Shiro，Redis等。
 使用Shiro+JWT实现安全登录和开发权限系统，提供系统安全性。
 使用Redis做缓存。
-
+注：经测试，已实现前后端分离，把前端独立出去运行，需注意更改请求路径
