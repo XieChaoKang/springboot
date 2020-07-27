@@ -1,6 +1,6 @@
 package com.xck.demo.Mapper;
 
-import com.xck.demo.Model.*;
+import com.xck.demo.model.*;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.mapping.FetchType;
 import org.springframework.stereotype.Repository;

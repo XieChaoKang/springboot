@@ -1,9 +1,8 @@
 package com.xck.demo.Mapper;
 
-import com.xck.demo.Model.Course;
-import com.xck.demo.Model.Elective_courses;
-import com.xck.demo.Model.Stu_course;
-import com.xck.demo.Util.Stu_courseDaoProvider;
+import com.xck.demo.model.Course;
+import com.xck.demo.model.Elective_courses;
+import com.xck.demo.model.Stu_course;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.mapping.FetchType;
 import org.springframework.stereotype.Repository;

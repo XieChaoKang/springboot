@@ -1,8 +1,8 @@
 package com.xck.demo.Mapper;
 
-import com.xck.demo.Model.Course;
-import com.xck.demo.Model.Score;
-import com.xck.demo.Model.user_info;
+import com.xck.demo.model.Course;
+import com.xck.demo.model.Score;
+import com.xck.demo.model.user_info;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

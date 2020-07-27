@@ -38,7 +38,13 @@ spring:
         max-idle: 8
     lettuce:
       shutdown-timeout: 5000
-#logging:
+  #rabbitmq配置
+  rabbitmq:
+    host: 182.92.130.191
+    port: 5672
+    username: xck
+    password: xck
+  #logging:
  # level:
   #  com.xck.demo.Mapper: info
 #mybatis:

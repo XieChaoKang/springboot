@@ -1,6 +1,6 @@
 package com.xck.demo.Mapper;
 
-import com.xck.demo.Model.user_info;
+import com.xck.demo.model.user_info;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
