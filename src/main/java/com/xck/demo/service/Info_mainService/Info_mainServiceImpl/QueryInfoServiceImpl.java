@@ -1,6 +1,6 @@
 package com.xck.demo.service.Info_mainService.Info_mainServiceImpl;
 
-import com.xck.demo.Mapper.Info_mainMapper;
+import com.xck.demo.mapper.Info_mainMapper;
 import com.xck.demo.model.user_info;
 import com.xck.demo.service.Info_mainService.Sel_InfoService;
 import org.springframework.beans.factory.annotation.Autowired;

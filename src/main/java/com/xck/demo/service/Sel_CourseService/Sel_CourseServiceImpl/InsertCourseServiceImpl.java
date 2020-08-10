@@ -1,6 +1,6 @@
 package com.xck.demo.service.Sel_CourseService.Sel_CourseServiceImpl;
 
-import com.xck.demo.Mapper.Select_CourseMapper;
+import com.xck.demo.mapper.Select_CourseMapper;
 import com.xck.demo.model.Stu_course;
 import com.xck.demo.service.Sel_CourseService.In_CourseService;
 import org.springframework.beans.factory.annotation.Autowired;

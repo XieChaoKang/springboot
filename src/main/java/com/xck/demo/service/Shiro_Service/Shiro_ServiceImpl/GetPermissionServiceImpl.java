@@ -1,6 +1,6 @@
 package com.xck.demo.service.Shiro_Service.Shiro_ServiceImpl;
 
-import com.xck.demo.Mapper.Info_ServiceMapper;
+import com.xck.demo.mapper.Info_ServiceMapper;
 import com.xck.demo.model.Permission;
 import com.xck.demo.model.Roles;
 import com.xck.demo.service.Shiro_Service.GetPermissionService;

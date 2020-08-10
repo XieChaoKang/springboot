@@ -1,6 +1,6 @@
 package com.xck.demo.service.Tea_Service.Tea_ServiceImpl;
 
-import com.xck.demo.Mapper.TeacherMapper;
+import com.xck.demo.mapper.TeacherMapper;
 import com.xck.demo.model.Course;
 import com.xck.demo.service.Tea_Service.GetCourseById;
 import org.springframework.beans.factory.annotation.Autowired;

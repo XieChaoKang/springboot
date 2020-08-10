@@ -1,4 +1,4 @@
-package com.xck.demo.Mapper;
+package com.xck.demo.mapper;
 
 import com.xck.demo.model.Course;
 import com.xck.demo.model.Elective_courses;

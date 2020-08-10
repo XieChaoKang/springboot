@@ -18,6 +18,10 @@ public class RedisUtil {
         return redisTemplate;
     }
 
+    public static boolean exists(final String key){
+        return redisTemplate.hasKey(key);
+    }
+
     public static boolean expire(final String key,final long timeout){
         Boolean result = redisTemplate.expire(key,timeout,TimeUnit.SECONDS);
         return result != null && result;

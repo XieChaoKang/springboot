@@ -1,4 +1,4 @@
-package com.xck.demo.Mapper;
+package com.xck.demo.mapper;
 
 import com.xck.demo.model.user_info;
 import org.apache.ibatis.annotations.Mapper;

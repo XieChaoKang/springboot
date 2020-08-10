@@ -1,6 +1,6 @@
 package com.xck.demo.service.Info_Service.Info_ServiceImpl;
 
-import com.xck.demo.Mapper.Info_ServiceMapper;
+import com.xck.demo.mapper.Info_ServiceMapper;
 import com.xck.demo.model.Score;
 import com.xck.demo.service.Info_Service.Sel_ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;

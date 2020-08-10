@@ -63,7 +63,9 @@ public class InsertCourse {
         int j = upCapacityService.upCourse_capacity(list1);
         if (i != 0 && j != 0) {
             logger.info("更新："+j);
-            RedisUtil.delete(key);
+            if (RedisUtil.exists(key)){
+                RedisUtil.delete(key);
+            }
             return new Result(233, "抢课成功了");
         }
         else {
