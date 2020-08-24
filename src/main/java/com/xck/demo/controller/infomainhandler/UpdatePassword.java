@@ -5,6 +5,10 @@ import com.xck.demo.service.Info_mainService.Info_mainServiceImpl.ChangePassServ
 import com.xck.demo.service.Info_mainService.Info_mainServiceImpl.StudentGetPasswordImpl;
 import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
@@ -21,6 +25,7 @@ import java.io.UnsupportedEncodingException;
  * @date 2020/4/12 1:25
  * 更改密码接口
  */
+@Api("更改密码接口")
 @Controller
 public class UpdatePassword {
 
@@ -30,9 +35,14 @@ public class UpdatePassword {
     @Autowired
     ChangePassServiceImpl passService;
 
+    @ApiOperation("更改密码接口，需要把token放在请求头")
+    @ApiImplicitParams({
+           @ApiImplicitParam(value = "password",paramType = "query",readOnly = true),
+            @ApiImplicitParam(value = "new_pass",paramType = "query",readOnly = true)
+    })
     @ResponseBody
     @RequestMapping("/up_pass")
-    public Result upPass(HttpServletRequest servletRequest, @RequestParam ("password") String password, @RequestParam ("new_pass") String new_pass, HttpServletRequest request) throws UnsupportedEncodingException{
+    public Result upPass(HttpServletRequest servletRequest, @RequestParam ("password") String password, @RequestParam ("new_pass") String newPass) throws UnsupportedEncodingException{
         Logger logger = LoggerFactory.getLogger(UpdatePassword.class);
         logger.info("修改密码");
         String token = servletRequest.getHeader("AccessToken");
@@ -48,7 +58,7 @@ public class UpdatePassword {
         //判断用户旧密码是否正确
         if (md5.equals(passcode)){
             logger.info("修改密码到达");
-            user_info user_info = new user_info(id,new SimpleHash("md5",new_pass,salt,2).toString());
+            user_info user_info = new user_info(id,new SimpleHash("md5",newPass,salt,2).toString());
             //更改密码
             if( passService.Up_Pass(user_info) != 0){
                 return new Result(222,"修改成功");

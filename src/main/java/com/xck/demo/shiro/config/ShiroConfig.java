@@ -56,6 +56,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/index.html", "anon");
         filterChainDefinitionMap.put("/index","anon");
         filterChainDefinitionMap.put("/sendDirectMessage","anon");
+        filterChainDefinitionMap.put("/swagger-ui.html","anon");
+        filterChainDefinitionMap.put("/swagger-resources/**","anon");
+        filterChainDefinitionMap.put("/v2/**","anon");
         //前后端带login登录退出的或者其他登录的通通放行
         filterChainDefinitionMap.put("/test_login", "anon");
         filterChainDefinitionMap.put("/logout", "anon");

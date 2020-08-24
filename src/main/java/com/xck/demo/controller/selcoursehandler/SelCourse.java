@@ -7,6 +7,8 @@ import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.LayerResult;
 import com.xck.demo.util.Sel_CourseResult;
 import com.xck.demo.vo.Sel_CourseVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,12 +21,14 @@ import java.util.List;
  * @date 2020/4/16 15:37
  * 查询选课课程信息
  */
+@Api("学生查看选课课程信息")
 @RestController
 public class SelCourse {
 
     @Autowired
     SelCourseServiceImpl selCourseService;
 
+    @ApiOperation("学生查看选课课程信息接口，需要把token放在请求头")
     @RequestMapping("/sel_course")
     public JSON selCourse(HttpServletRequest servletRequest){
 

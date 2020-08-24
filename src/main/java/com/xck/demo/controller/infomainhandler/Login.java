@@ -7,6 +7,7 @@ import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.RedisUtil;
 import com.xck.demo.util.Result;
 import com.xck.demo.constant.RedisConstant;
+import io.swagger.annotations.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -27,6 +28,10 @@ import java.util.Map;
  * @date 2020/4/4 15:00
  * 登录接口
  */
+@Api(tags = "用户登录接口")
+@ApiResponses({
+        @ApiResponse(code = 0, message = "", response = Result.class)
+})
 @RestController
 public class Login {
 
@@ -38,6 +43,11 @@ public class Login {
     @Autowired
     GetRolesServiceImpl getRolesService;
 
+    @ApiOperation("用户登录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(value = "id",paramType = "query",readOnly = true),
+            @ApiImplicitParam(value = "password",paramType = "query",readOnly = true)
+    })
     @RequestMapping("/test_login")
     public Result login(@RequestParam ("id") int id, @RequestParam ("password") String password){
 

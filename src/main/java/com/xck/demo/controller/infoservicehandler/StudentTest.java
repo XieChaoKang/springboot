@@ -11,6 +11,8 @@ import com.xck.demo.util.RedisUtil;
 import com.xck.demo.vo.Stu_test;
 import com.xck.demo.util.TestResult;
 import com.xck.demo.constant.RedisConstant;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/4/11 1:03
  * 查询考试信息
  */
+@Api("学生查询考试信息接口")
 @RestController
 public class StudentTest {
 
@@ -34,6 +37,7 @@ public class StudentTest {
     @Autowired
     ScoreByIdAndCodeImpl scoreByIdAndCodeImpl;
 
+    @ApiOperation("查看考试信息接口，需要把token放在请求头")
     @RequestMapping("/sel_test")
     public JSON selTest1(HttpServletRequest servletRequest){
         LoggerFactory.getLogger(StudentTest.class).info("考试到达！！");

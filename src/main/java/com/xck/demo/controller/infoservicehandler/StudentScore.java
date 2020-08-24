@@ -7,6 +7,8 @@ import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.LayerResult;
 import com.xck.demo.util.ScoreResult;
 import com.xck.demo.vo.Stu_ScoreVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ import java.util.List;
  * @date 2020/4/12 2:20
  * 成绩信息接口
  */
+@Api("学生查看成绩")
 @RestController
 public class StudentScore {
 
@@ -29,6 +32,7 @@ public class StudentScore {
 
     // 及格成绩
 
+    @ApiOperation("及格成绩接口，需要把token放在请求头")
     @RequestMapping("/sel_score")
     public JSON stuScore(HttpServletRequest servletRequest){
         LoggerFactory.getLogger(StudentCourse.class).info("成绩到达！！");
@@ -47,6 +51,7 @@ public class StudentScore {
 
     //不及格的成绩
 
+    @ApiOperation("不及格成绩接口，需要把token放在请求头")
     @RequestMapping("/sel_score1")
     public JSON stuScore1(HttpServletRequest servletRequest){
         LoggerFactory.getLogger(StudentCourse.class).info("课程到达！！");

@@ -10,6 +10,8 @@ import com.xck.demo.service.Tea_Service.Tea_ServiceImpl.GetStuInfoByIdImpl;
 import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.LayerResult;
 import com.xck.demo.vo.Tea_ScoreVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,7 @@ import java.util.List;
  * @author 谢朝康
  * @date 2020/4/28 11:30
  */
+@Api(tags = "老师查看学生成绩")
 @RestController
 public class GetStudentScore {
 
@@ -35,8 +38,7 @@ public class GetStudentScore {
     @Autowired
     GetStuInfoByIdImpl getStuInfoById;
 
-    //老师发布成绩使用的学生成绩信息接口
-
+    @ApiOperation("老师发布成绩使用的学生成绩信息接口，需要把token放在请求头")
     @RequestMapping("/getStu_Score")
     public JSON getStuScore(HttpServletRequest servletRequest){
         String token = servletRequest.getHeader("AccessToken");
@@ -63,8 +65,7 @@ public class GetStudentScore {
         return LayerResult.getJson(scoreVos);
     }
 
-    //老师更改成绩使用的学生成绩信息接口
-
+    @ApiOperation("老师更改学生成绩使用的学生成绩信息接口，需要把token放在请求头")
     @RequestMapping("/getStu_Score1")
     public JSON getStuScore1(HttpServletRequest servletRequest){
         LoggerFactory.getLogger(GetStudentScore.class).info("老师课程到达！！");

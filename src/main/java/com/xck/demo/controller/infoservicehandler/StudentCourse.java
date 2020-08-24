@@ -7,6 +7,8 @@ import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.LayerResult;
 import com.xck.demo.util.RedisUtil;
 import com.xck.demo.constant.RedisConstant;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +24,14 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/4/23 17:45
  * 学生查询课表入口
  */
+@Api(tags = "学生查询课表")
 @RestController
 public class StudentCourse {
-
 
     @Autowired
     private StudentCourseServiceImpl stuCourseService;
 
+    @ApiOperation("学生查询课表接口，需要把token放在请求头")
     @RequestMapping("/get_course")
     public JSON selCourse(HttpServletRequest servletRequest){
         LoggerFactory.getLogger(StudentCourse.class).info("课程到达！！");

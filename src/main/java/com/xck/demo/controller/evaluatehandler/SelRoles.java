@@ -4,6 +4,9 @@ import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.RedisUtil;
 import com.xck.demo.util.Result;
 import com.xck.demo.constant.RedisConstant;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,9 +19,11 @@ import java.util.Set;
  * @date 2020/4/23 16:34
  * 获取用户角色返回前端，前端根据角色判断能否访问页面
  */
+@Api(tags = "获取用户身份")
 @RestController
 public class SelRoles {
 
+    @ApiOperation("获取用户身份信息，需要把token放在请求头")
     @RequestMapping("/getRoles")
     public Result roles(HttpServletRequest servletRequest) throws NullPointerException{
         LoggerFactory.getLogger(SelRoles.class).info("权限方法到达");

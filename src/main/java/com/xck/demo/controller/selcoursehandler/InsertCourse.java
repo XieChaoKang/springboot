@@ -9,6 +9,9 @@ import com.xck.demo.util.RedisUtil;
 import com.xck.demo.constant.RedisConstant;
 import com.xck.demo.shiro.util.JwtUtil;
 import com.xck.demo.util.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,7 @@ import java.util.List;
  * @date 2020/4/16 17:40
  * 学生选择课程提交入口
  */
+@Api(tags = "学生抢课接口")
 @RestController
 public class InsertCourse {
 
@@ -39,6 +43,8 @@ public class InsertCourse {
     @Autowired
     UpdateCapacityServiceImpl upCapacityService;
 
+    @ApiOperation("学生抢课接口，需要把token放在请求头")
+    @ApiImplicitParam(value = "course_codes",paramType = "query",readOnly = true)
     @RequestMapping("/in_course")
     public Result test(@RequestParam("course_codes") String courseCodes,HttpServletRequest servletRequest) {
         logger.info("访问到达");

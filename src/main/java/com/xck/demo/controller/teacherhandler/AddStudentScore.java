@@ -3,6 +3,7 @@ package com.xck.demo.controller.teacherhandler;
 import com.xck.demo.model.Score;
 import com.xck.demo.service.Tea_Service.Tea_ServiceImpl.ModifyStuScoreImpl;
 import com.xck.demo.util.Result;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/4/28 21:47
  * 老师发布学生成绩数据接口
  */
+@Api(tags = "老师发布成绩")
 @RestController
 public class AddStudentScore {
 
