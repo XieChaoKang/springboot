@@ -27,6 +27,10 @@ public class RedisUtil {
         return result != null && result;
     }
 
+    public static boolean isEmpty(final String key){
+        return redisTemplate.hasKey(key) != null;
+    }
+
     public static Object get(String key){
 
         if (null != redisTemplate.hasKey(key)){
@@ -52,5 +56,9 @@ public class RedisUtil {
 
     public static void set(final String key,final Object value,final long timeout,TimeUnit timeUnit){
         redisTemplate.opsForValue().set(key,value,timeout, timeUnit);
+    }
+
+    public static void incr(final String key){
+        redisTemplate.opsForValue().increment(key);
     }
 }

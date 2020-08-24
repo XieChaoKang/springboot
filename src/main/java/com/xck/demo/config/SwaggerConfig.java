@@ -76,7 +76,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
         return new ApiInfoBuilder()
                 .title("SpringBoot整合Swagger")
                 .description("SpringBoot整合Swagger")
-                .version("9.0")
+                .version("v9.0")
                 .build();
     }
 }

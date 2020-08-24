@@ -37,5 +37,13 @@ public class RedisConstant {
      * */
     public static final String COURSE_PREFIX = "course::";
 
+    /**
+     * 考试前缀
+     * */
     public static final String TEST_PREFIX = "test::";
+
+    /**
+     * ip前缀
+     * */
+    public static final String IP_PREFIX = "::";
 }
